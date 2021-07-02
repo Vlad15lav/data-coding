@@ -32,7 +32,7 @@ class LZ77:
 
         return best_offset, best_length
 
-    def encode(self, path_file: str, path_save: str):        
+    def compress(self, path_file: str, path_save: str):        
         with open(path_file, 'rb') as input_file:
             message = input_file.read()
 
@@ -57,7 +57,7 @@ class LZ77:
         file.write(out.tobytes())
         file.close()
 
-    def decode(self, path_file: str, path_save: str):
+    def decompress(self, path_file: str, path_save: str):
         processed = open(path_save, "wb")
 
         output_buffer = []
