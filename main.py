@@ -21,6 +21,6 @@ if __name__ == '__main__':
 
     type_mode = tool.compress if opt.compress else None
     type_mode = tool.decompress if opt.decompress else None
-    if type_mode not is None:
+    if type_mode is not None:
         type_mode(path_file=opt.file, path_save=opt.save)
     
