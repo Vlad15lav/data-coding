@@ -5,3 +5,7 @@ Algorithms for Data Compression💽🗜
 ```
 pip install -U -r requirements.txt
 ```
+
+## LZ77
+
+## LZ78
