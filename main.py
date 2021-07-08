@@ -25,9 +25,13 @@ if __name__ == '__main__':
         tool = LZ78()
     else:
         raise ValueError('Algorithm is not correct!')
+    
+    if opt.compress:
+        type_mode = tool.compress
+    elif opt.decompress:
+        type_mode = tool.decompress
+    else:
+        raise ValueError('Mode is not selected!')
 
-    type_mode = tool.compress if opt.compress else None
-    type_mode = tool.decompress if opt.decompress else None
     if type_mode is not None:
         type_mode(path_file=opt.file, path_save=opt.save)
-    
