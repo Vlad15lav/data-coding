@@ -1,6 +1,7 @@
 import argparse
 
 from utils.lz77 import LZ77
+from utils.lz78 import LZ78
 
 def get_args():
     parser = argparse.ArgumentParser('Data-Compression - Vlad15lav')
@@ -17,7 +18,13 @@ def get_args():
 
 if __name__ == '__main__':
     opt = get_args()
-    tool = LZ77(max_offset=opt.max_offset, max_length=opt.max_length)
+    
+    if opt.type == 'LZ77':
+        tool = LZ77(max_offset=opt.max_offset, max_length=opt.max_length)
+    elif:
+        tool = LZ78()
+    else:
+        raise ValueError('Algorithm is not correct!')
 
     type_mode = tool.compress if opt.compress else None
     type_mode = tool.decompress if opt.decompress else None
