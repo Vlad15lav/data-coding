@@ -21,7 +21,7 @@ if __name__ == '__main__':
     
     if opt.type == 'LZ77':
         tool = LZ77(max_offset=opt.max_offset, max_length=opt.max_length)
-    elif:
+    elif opt.type == 'LZ78':
         tool = LZ78()
     else:
         raise ValueError('Algorithm is not correct!')
