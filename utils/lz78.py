@@ -37,7 +37,8 @@ class LZ78:
                 last_idx = 0
                 next_idx += 1
                 bit_numeric += 1
-
+        
+        out.append(is_end_mark)
         out.tofile(file)
         file.close()
 
@@ -50,7 +51,7 @@ class LZ78:
 
         history = dict()
         bit_numeric, number_size, is_end_mark = 1, 1, data[-1]
-        data = data[:-1]
+        del data[-1]
 
         pos = 0
         iteration = 1
