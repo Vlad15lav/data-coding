@@ -38,7 +38,9 @@ class LZ77:
 
         file = open(path_save, "wb")
 
-        pos, length_str, out = 0, len(message), bitarray(endian='big')
+        out = bitarray(endian='big')
+        pos, length_str = 0, len(message)
+
         while pos < length_str:
             cur_offset, cur_length = self.findBestPattern(message, pos)
             pos += cur_length
@@ -50,9 +52,12 @@ class LZ77:
             else:
                 out.append(False)
 
+            if pos >= length_str:
+                break
+
             out.frombytes(bytes([message[pos]]))
             pos += 1
-        
+
         out.fill()
         file.write(out.tobytes())
         file.close()
@@ -64,8 +69,8 @@ class LZ77:
         data = bitarray(endian='big')
         with open(path_file,'rb') as f:
             data.fromfile(f)
-
-        while len(data):
+        
+        while data:
             flag = data.pop(0)
             
             # (0, 0, char)
