@@ -1,4 +1,4 @@
-# Data-Compression
+# Data coding
 Algorithms for Data Compression💽🗜
 
 ## Requirements
