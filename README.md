@@ -1,5 +1,5 @@
 # Data coding
-Algorithms for Data Compression💽🗜
+Algorithms for Data Coding💽🗜
 
 ## Requirements
 ```
