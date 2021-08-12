@@ -9,3 +9,5 @@ pip install -U -r requirements.txt
 ## LZ77
 
 ## LZ78
+
+## Reed Muller
