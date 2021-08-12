@@ -1,3 +1,4 @@
+import itertools
 import numpy as np
 
 from bitarray import bitarray
